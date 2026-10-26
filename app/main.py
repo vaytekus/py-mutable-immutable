@@ -16,6 +16,7 @@ marks = {
 }
 collection_of_coins = {1, 2, 25}
 
+
 def sort_func(args_list: list) -> dict:
     sorted_variables = {}
     immutable_list = []
@@ -32,5 +33,15 @@ def sort_func(args_list: list) -> dict:
 
     return sorted_variables
 
-result = sort_func([lucky_number, pi, one_is_a_prime_number, name, my_favourite_films, profile_info, marks, collection_of_coins])
+
+result = sort_func([
+    lucky_number,
+    pi,
+    one_is_a_prime_number,
+    name,
+    my_favourite_films,
+    profile_info,
+    marks,
+    collection_of_coins
+])
 print(result)
