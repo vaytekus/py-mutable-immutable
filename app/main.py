@@ -16,25 +16,7 @@ marks = {
 }
 collection_of_coins = {1, 2, 25}
 
-
-def sort_func(args_list: list) -> dict:
-    sorted_variables = {}
-    immutable_list = []
-    mutable_list = []
-
-    for item in args_list:
-        if isinstance(item, (list, dict, set)):
-            mutable_list.append(item)
-        else:
-            immutable_list.append(item)
-
-    sorted_variables["immutable"] = immutable_list
-    sorted_variables["mutable"] = mutable_list
-
-    return sorted_variables
-
-
-result = sort_func([
+all_variables = [
     lucky_number,
     pi,
     one_is_a_prime_number,
@@ -42,6 +24,19 @@ result = sort_func([
     my_favourite_films,
     profile_info,
     marks,
-    collection_of_coins
-])
-print(result)
+    collection_of_coins,
+]
+
+immutable_list = []
+mutable_list = []
+
+for item in all_variables:
+    if isinstance(item, (str, int, float, bool, tuple)):
+        immutable_list.append(item)
+    else:
+        mutable_list.append(item)
+
+sorted_variables = {
+    "immutable": immutable_list,
+    "mutable": mutable_list,
+}
